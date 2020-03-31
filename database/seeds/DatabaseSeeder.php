@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Antonio J.Sánchez 
+ * curso 2019/20
+ */
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,13 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
-        DB::table('platforms')->truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
-
-        // $this->call(UsersTableSeeder::class);
-        $this->call(PlatformSeeder::class);
-        $this->call(GameSeeder::class);
+        $this->call([
+        			  TableroTableSeeder::class, 
+        			  NotaTableSeeder::class
+        			]);
     }
 }
